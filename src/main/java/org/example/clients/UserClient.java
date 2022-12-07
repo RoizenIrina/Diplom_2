@@ -13,8 +13,7 @@ public class UserClient extends Client {
             CREATE_USER = "/api/auth/register",
             LOGIN_USER = "/api/auth/login",
             DATA_USER = "/api/auth/user";
-//            PASSWORD_USER_STEP1 = "api/password-reset",
-//            PASSWORD_USER_STEP2 = "api/password-reset/reset";
+
 
     public static final int STATUS_CODE = 202;
 
@@ -55,26 +54,6 @@ public class UserClient extends Client {
                 .when()
                 .patch(DATA_USER);
     }
-
-//    @Step("change user")
-//    public Response changeUserStep1(String accessToken, User user ) {
-//        return  given()
-//                .header("Authorization", accessToken)
-//                .spec(getSpec())
-//                .body(user)
-//                .when()
-//                .post(PASSWORD_USER_STEP1);
-//    }
-//
-//    @Step("change user")
-//    public Response changeUserStep2(String accessToken, User user ) {
-//        return  given()
-//                .header("Authorization", accessToken)
-//                .spec(getSpec())
-//                .body(user)
-//                .when()
-//                .patch(DATA_USER);
-//    }
 
     @Step("delete user")
     public void deleteUser(String accessToken) {

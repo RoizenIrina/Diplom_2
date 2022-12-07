@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf8be3cb-e771-483e-8e5d-2b51bef8a8c7" name="Changes" comment="1" />
+    <list default="true" id="cf8be3cb-e771-483e-8e5d-2b51bef8a8c7" name="Changes" comment="1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/clients/OrderClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/clients/OrderClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/generators/OrderGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/generators/OrderGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/order/CreateOderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/order/CreateOderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/user/ChangeUserDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/user/ChangeUserDataTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -42,8 +54,8 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.CreateOderTest.createValidOrder">
-    <configuration name="ChangeUserDataTest.changeAuthorizedUserEmailForBusyOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LoginUserTest">
+    <configuration name="ChangeUserDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="QA-java-diplom-2" />
       <extension name="coverage">
         <pattern>
@@ -53,13 +65,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.user" />
       <option name="MAIN_CLASS_NAME" value="org.example.user.ChangeUserDataTest" />
-      <option name="METHOD_NAME" value="changeAuthorizedUserEmailForBusyOne" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChangeUserDataTest.changeAuthorizedUserPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateNewUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="QA-java-diplom-2" />
       <extension name="coverage">
         <pattern>
@@ -68,41 +79,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.user" />
-      <option name="MAIN_CLASS_NAME" value="org.example.user.ChangeUserDataTest" />
-      <option name="METHOD_NAME" value="changeAuthorizedUserPassword" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ChangeUserDataTest.changeNotAuthorizedUserName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="QA-java-diplom-2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.user" />
-      <option name="MAIN_CLASS_NAME" value="org.example.user.ChangeUserDataTest" />
-      <option name="METHOD_NAME" value="changeNotAuthorizedUserName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateOderTest.createOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="QA-java-diplom-2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.order.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.order" />
-      <option name="MAIN_CLASS_NAME" value="org.example.order.CreateOderTest" />
-      <option name="METHOD_NAME" value="createOrder" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.example.user.CreateNewUserTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -123,13 +101,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FindOrdersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QA-java-diplom-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.order.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.order" />
+      <option name="MAIN_CLASS_NAME" value="org.example.order.FindOrdersTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QA-java-diplom-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.user" />
+      <option name="MAIN_CLASS_NAME" value="org.example.user.LoginUserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoginUserTest" />
+        <item itemvalue="JUnit.CreateNewUserTest" />
+        <item itemvalue="JUnit.ChangeUserDataTest" />
+        <item itemvalue="JUnit.FindOrdersTest" />
         <item itemvalue="JUnit.CreateOderTest.createValidOrder" />
-        <item itemvalue="JUnit.CreateOderTest.createOrder" />
-        <item itemvalue="JUnit.ChangeUserDataTest.changeAuthorizedUserPassword" />
-        <item itemvalue="JUnit.ChangeUserDataTest.changeNotAuthorizedUserName" />
-        <item itemvalue="JUnit.ChangeUserDataTest.changeAuthorizedUserEmailForBusyOne" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670343792189</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1">
+      <created>1670343848420</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670343848420</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

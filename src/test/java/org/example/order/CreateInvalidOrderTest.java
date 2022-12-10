@@ -19,7 +19,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertNotEquals;
 
 
-public class CreateOderTest {
+public class CreateInvalidOrderTest {
     private User user;
     private Order order;
     private UserClient userClient;
@@ -43,6 +43,11 @@ public class CreateOderTest {
         orderClient = new OrderClient();
         user = UserGenerator.getDefault();
         Response response = userClient.createUser(user);
+        try{
+            Thread.sleep(3000);
+        }
+        catch(InterruptedException ie){
+        }
         accessToken = response.then().extract().path("accessToken");
         Response response1 = orderClient.getIngredients();
         List<String>jsonResponse =  response1.then().extract().body().jsonPath().getList("data._id");
@@ -53,14 +58,6 @@ public class CreateOderTest {
         expected = true;
         expectedError = false;
         nullIngredientErrorMessage = "Ingredient ids must be provided";
-    }
-
-    @Test
-    @DisplayName("create valid Order for authorized user")
-    public void createValidOrder() {
-        Response response2 = orderClient.createNewOrder(accessToken, order);
-        response2.then().assertThat().statusCode(statusCode)
-                .and().body("success", equalTo(expected));
     }
 
     @Test

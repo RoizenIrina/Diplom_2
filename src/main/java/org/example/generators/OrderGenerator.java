@@ -22,20 +22,18 @@ public  static List<String> getIngredients(List<String> jsonResponse) {
     return ingredients;
 };
 
+    public  static List<String> getInvalidIngredients(){
+        ingredients.add(faker.bothify("?#####?123qwe"));
+        return ingredients;
+    };
     @Step("get order valid date")
     public static Order getDefault(List<String> jsonResponse){
         return new Order(getIngredients( jsonResponse));
     }
-    @Step("get order without ingredients")
-    public static Order getWithZeroIngredients(List<String> jsonResponse){
-        jsonResponse.clear();
-        return new Order(getIngredients(jsonResponse));
-    }
+
     @Step("get order invalid date")
-    public static Order getWithInvalidIngredients(List<String> jsonResponse){
-        jsonResponse.clear();
-        ingredients.add("1");
-        return new Order(getIngredients(jsonResponse));
+    public static Order getWithInvalidIngredients(){
+               return new Order(getInvalidIngredients());
     }
 }
 

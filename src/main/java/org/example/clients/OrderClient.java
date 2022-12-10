@@ -23,12 +23,12 @@ public class OrderClient extends Client {
     }
 
     @Step("Create new order")
-    public Response createNewOrder(String accessToken, Order order) {
+    public Response createNewOrder(String accessToken, Order ingredients) {
         Response response =
                 given()
                         .spec(getSpec())
                         .header("Authorization", accessToken)
-                        .body(order)
+                        .body(ingredients)
                         .when()
                         .post(ORDER);
         return response;

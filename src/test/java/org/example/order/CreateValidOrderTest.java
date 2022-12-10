@@ -35,11 +35,6 @@ public class CreateValidOrderTest {
         orderClient = new OrderClient();
         user = UserGenerator.getDefault();
         Response response = userClient.createUser(user);
-//        try{
-//            Thread.sleep(3000);
-//        }
-//        catch(InterruptedException ie){
-//        }
         accessToken = response.then().extract().path("accessToken");
         Response response1 = orderClient.getIngredients();
         List<String> jsonResponse =  response1.then().extract().body().jsonPath().getList("data._id");

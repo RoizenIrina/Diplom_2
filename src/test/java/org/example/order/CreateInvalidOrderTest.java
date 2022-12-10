@@ -24,7 +24,6 @@ public class CreateInvalidOrderTest {
     private Order order;
     private UserClient userClient;
     private OrderClient orderClient;
-    private OrderGenerator orderGenerator;
     private int
             statusCode,
             invalidIngredientStatusCode,
@@ -43,14 +42,13 @@ public class CreateInvalidOrderTest {
         orderClient = new OrderClient();
         user = UserGenerator.getDefault();
         Response response = userClient.createUser(user);
-        try{
+        try {
             Thread.sleep(3000);
-        }
-        catch(InterruptedException ie){
+        } catch (InterruptedException ie) {
         }
         accessToken = response.then().extract().path("accessToken");
         Response response1 = orderClient.getIngredients();
-        List<String>jsonResponse =  response1.then().extract().body().jsonPath().getList("data._id");
+        List<String> jsonResponse = response1.then().extract().body().jsonPath().getList("data._id");
         order = OrderGenerator.getDefault(jsonResponse);
         statusCode = 200;
         invalidIngredientStatusCode = 500;
@@ -62,7 +60,7 @@ public class CreateInvalidOrderTest {
 
     @Test
     @DisplayName("create Order for not authorized user")
-    @Description( "the test will fail because according to the documents it is impossible to create an order without authorization, but in practice it is possible")
+    @Description("the test will fail because according to the documents it is impossible to create an order without authorization, but in practice it is possible")
     public void createOrderForNotAuthorizedUser() {
         String accessToken = "";
         Response response2 = orderClient.createNewOrder(accessToken, order);
@@ -72,7 +70,7 @@ public class CreateInvalidOrderTest {
 
     @Test
     @DisplayName("post invalid ingredients")
-    @Description( "the response to the request does not contain a body, so we only check the statusCode")
+    @Description("the response to the request does not contain a body, so we only check the statusCode")
     public void createOrderWithInvalidIngredients() {
         order = OrderGenerator.getWithInvalidIngredients();
         Response response2 = orderClient.createNewOrder(accessToken, order);
@@ -82,7 +80,7 @@ public class CreateInvalidOrderTest {
     @Test
     @DisplayName("post without ingredients")
     public void createOrderWithoutIngredients() {
-       order.ingredients.clear();
+        order.ingredients.clear();
         Response response2 = orderClient.createNewOrder(accessToken, order);
         response2.then().assertThat().statusCode(nullIngredientStatusCode)
                 .and().body("message", equalTo(nullIngredientErrorMessage));

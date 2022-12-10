@@ -88,11 +88,8 @@ public class ChangeUserDataTest {
     public void  changeAuthorizedUserEmailForBusyOne(){
         Response response1 = userClient.findUser(accessToken);
         String emailDefault = response1.then().extract().path("user.email");
-//        System.out.println(emailDefault);
         user =  UserGenerator.getAnother();
         Response response2 = userClient.createUser(user);
-//        String emailAnother = response2.then().extract().path("user.email");
-//        System.out.println(emailAnother);
         String accessToken = response2.then().extract().path("accessToken");
         user.setEmail(emailDefault);
         Response response3 = userClient.changeUser(accessToken, user);

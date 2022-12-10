@@ -46,17 +46,17 @@ public class FindOrdersTest {
     @Test
     @DisplayName("find order to authorized user")
     public void findOrderToAuthorizedUser() {
-        Response response1 = userClient.loginUser(Credentials.from(user));
-        Response response2 = orderClient.findOrder(accessToken);
-        response2.then().statusCode(statusCode).and().body("success", equalTo(expected));
+        userClient.loginUser(Credentials.from(user));
+        Response response1 = orderClient.findOrder(accessToken);
+        response1.then().statusCode(statusCode).and().body("success", equalTo(expected));
     }
 
     @Test
     @DisplayName("find order to not authorized user")
     public void findOrderToNotAuthorizedUser() {
         String accessToken = "";
-        Response response = orderClient.findOrder(accessToken);
-        response.then().statusCode(statusCodeError).and().body("message", equalTo(errorMessage));
+        Response response1 = orderClient.findOrder(accessToken);
+        response1.then().statusCode(statusCodeError).and().body("message", equalTo(errorMessage));
     }
 
 

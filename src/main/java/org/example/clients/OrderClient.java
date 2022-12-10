@@ -18,17 +18,17 @@ public class OrderClient extends Client {
                 given()
                         .spec(getSpec())
                         .when()
-                        .get(ORDER);
+                        .get(INGREDIENTS);
         return response;
     }
 
     @Step("Create new order")
-    public Response createNewOrder(String accessToken, Order order) {
+    public Response createNewOrder(String accessToken, Order ingredients) {
         Response response =
                 given()
                         .spec(getSpec())
                         .header("Authorization", accessToken)
-                        .body(order)
+                        .body(ingredients)
                         .when()
                         .post(ORDER);
         return response;
@@ -45,12 +45,5 @@ public class OrderClient extends Client {
         return response;
     }
 
-    @Step("Order list")
-    public Response orderList() {
-        return given()
-                .spec(getSpec())
-                .when()
-                .get(ORDER);
 
-    }
 }

@@ -29,6 +29,7 @@ public class CreateNewUserTest {
     @Before
     public void setUp() {
         userClient = new UserClient();
+        user = UserGenerator.getDefault();
         statusCode = 200;
         statusCodeError = 403;
         expected = true;
@@ -38,38 +39,57 @@ public class CreateNewUserTest {
 
     @Test
     @DisplayName("check post - creating user")
-    public void checkPostCreatingUser() {
-        user = UserGenerator.getDefault();
+    public void checkCreatingUser() {
         Response response = userClient.createUser(user);
+        try{
+            Thread.sleep(3000);
+        }
+        catch(InterruptedException ie){
+        }
         response.then().assertThat().statusCode(statusCode)
                 .and().body("success", equalTo(expected));
     }
 
     @Test
     @DisplayName("check post- creating identical user")
-    public void checkPostCreatingIdenticalUser() {
-        user = UserGenerator.getDefault();
-        Response response = userClient.createUser(user);
+    public void checkCreatingIdenticalUser() {
+                userClient.createUser(user);
+        try{
+            Thread.sleep(3000);
+        }
+        catch(InterruptedException ie){
+        }
         Response response1 = userClient.createUser(user);
+
         response1.then().assertThat().statusCode(statusCodeError)
-                .and()
-                .assertThat().body("message", equalTo(userExistErrorMessage));
+                .and().assertThat().body("message", equalTo(userExistErrorMessage));
     }
 
     @Test
     @DisplayName("check post- creating user without Name")
-    public void checkPostCreatingUserWithoutName() {
+    public void checkCreatingUserWithoutName() {
         user = UserGenerator.getWithoutName();
         Response response = userClient.createUser(user);
+        try{
+            Thread.sleep(3000);
+        }
+        catch(InterruptedException ie){
+        }
         response.then().assertThat().statusCode(statusCodeError)
                 .and()
                 .assertThat().body("message", equalTo(notEnoughDataErrorMessage));
     }
+
     @Test
     @DisplayName("check post- creating user without Email")
-    public void checkPostCreatingUserWithoutEmail() {
+    public void checkCreatingUserWithoutEmail() {
         user = UserGenerator.getWithoutEmail();
         Response response = userClient.createUser(user);
+        try{
+            Thread.sleep(3000);
+        }
+        catch(InterruptedException ie){
+        }
         response.then().assertThat().statusCode(statusCodeError)
                 .and()
                 .assertThat().body("message", equalTo(notEnoughDataErrorMessage));
@@ -77,9 +97,14 @@ public class CreateNewUserTest {
 
     @Test
     @DisplayName("check post- creating user without Password")
-    public void checkPostCreatingUserWithoutPassword() {
+    public void checkCreatingUserWithoutPassword() {
         user = UserGenerator.getWithoutPassword();
         Response response = userClient.createUser(user);
+        try{
+            Thread.sleep(3000);
+        }
+        catch(InterruptedException ie){
+        }
         response.then().assertThat().statusCode(statusCodeError)
                 .and()
                 .assertThat().body("message", equalTo(notEnoughDataErrorMessage));
